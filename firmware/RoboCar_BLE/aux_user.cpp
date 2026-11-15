@@ -11,7 +11,7 @@
  *   - Schalter: 0 = aus, 255 = an
  *   - Schieber: 0 .. 255 stufenlos
  * Welcher Kanal Taster, Schalter oder Schieber ist, stellt ihr in der App
- * ein (Datei app/controls.js, ganz oben).
+ * ein (Datei docs/controls.js, ganz oben).
  *
  * Immer wenn sich ein Wert ändert, ruft das Hauptprogramm onAux(kanal, wert)
  * auf. Dort schreibt ihr hinein, was passieren soll.
@@ -21,8 +21,10 @@
  *
  * Achtung Strom: Ein ESP32-Pin liefert nur 3,3 V und höchstens ca. 20 mA.
  * Das reicht für eine LED mit Vorwiderstand, aber NICHT für Servos oder
- * Motoren. Die brauchen eine eigene 5-V-Versorgung (z. B. Powerbank),
- * vom ESP32 kommt nur das Steuersignal. GND (Minus) immer verbinden!
+ * Motoren. Die brauchen eine eigene 5-V-Versorgung, vom ESP32 kommt nur
+ * das Steuersignal. Für den Servo ist das ein Step-down-Modul am Akku,
+ * das vorher auf 5,0 V eingestellt wird (Anleitung "Programm anpassen
+ * und flashen", Kapitel Servo-Kicker). GND (Minus) immer verbinden!
  *
  * Unten stehen zwei fertige Beispiele. Zum Einschalten in der Zeile
  * "#define BEISPIEL_... 0" die 0 durch eine 1 ersetzen und hochladen.

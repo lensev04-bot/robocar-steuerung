@@ -5,8 +5,10 @@
  * Der Servo fährt aus und nach SCHUSS_DAUER_MS automatisch wieder ein,
  * auch wenn die Taste länger gedrückt bleibt.
  *
- * Verdrahtung: Servo-Signal (orange) an GPIO 4,
- *              Servo-Plus (rot) an VIN, Servo-Minus (braun) an GND.
+ * Verdrahtung: Servo-Signal (orange) an GPIO 4 (D4).
+ *              Servo-Plus (rot) an OUT+ und Servo-Minus (braun) an OUT-
+ *              des Step-down-Moduls (vorher auf 5,0 V eingestellt).
+ *              OUT- zusätzlich mit GND am ESP32 verbinden. Nicht an VIN!
  */
 #include "aux_user.h"
 

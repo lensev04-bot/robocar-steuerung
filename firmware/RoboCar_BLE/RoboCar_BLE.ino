@@ -18,7 +18,8 @@
  *  Regeln für den Namen:
  *    - "RoboCar-" wird automatisch davorgesetzt. Aus "Blitz" wird also
  *      "RoboCar-Blitz". Nur Namen mit "RoboCar-" am Anfang zeigt die App an.
- *    - Höchstens 18 Zeichen, keine Umlaute (ä, ö, ü, ß).
+ *    - Höchstens 18 Zeichen, keine Umlaute (ä, ö, ü), kein ß
+ *      und keine Sonderzeichen. Leerzeichen sind erlaubt.
  *    - Jedes Auto im Raum braucht einen anderen Namen!
  */
 #define AUTO_NAME ""

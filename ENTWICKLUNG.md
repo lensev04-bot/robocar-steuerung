@@ -3,7 +3,7 @@
 Kontext für alle, die später an der Steuerung weiterarbeiten. Hier steht, **warum** etwas so gebaut ist und was noch offen ist.
 Bedienung, Flashen und Protokoll stehen in der [README.md](README.md).
 
-Stand: 10.11.2026 · Firmware 1.1 · App-Cache `robocar-v4`
+Stand: 15.11.2026 · Firmware 1.1 · App-Cache `robocar-v4`
 
 ---
 
@@ -104,7 +104,7 @@ Stand: 10.11.2026 · Firmware 1.1 · App-Cache `robocar-v4`
 - **Verteilung an die Studierenden und Layout (13.11.2026):**
   - Die Studierenden laden **alles als ZIP von GitHub** (Code ▸ Download ZIP, kein Konto nötig) und entpacken nach `C:\RoboCar`. Das erklärt Kapitel 2 der LaTeX-Anleitung ausführlich. Die PDF-Anleitung kommt über die Betreuenden bzw. ILIAS.
   - Neuer Ordner `beispiele/` mit den Lösungen zum Servo-Kapitel, damit sie in der ZIP sind. Er liegt bewusst **nicht** im Sketch-Ordner, weil die IDE sonst alle `.cpp` mitübersetzt (doppelte Funktionen). Die Dateien sind identisch mit `WS26_27/Anleitung/LaTeX/code/`.
-  - LaTeX-Anleitungen auf das Layout der offiziellen TH-Köln-Vorlage umgestellt. Deckblatt: Modul „TRAIL – Projektwoche Maschinenbau“, Modulverantwortliche Prof. Dr. phil. Anja Richert, verantwortlich für die Projektwoche Prof. Dr. Jörg Luderich. Das Word-Deckblatt v4 hat dieselben Angaben.
+  - LaTeX-Anleitungen auf das Layout der offiziellen TH-Köln-Vorlage umgestellt. Deckblatt: Modul „TRAIL – Projektwoche Maschinenbau“, (Personenangaben am 15.11.2026 durch „Erstellt durch Stefan Berger, B.Eng.“ ersetzt.)
   - 13 Screenshots mit Markierungen eingebaut. Die zwei geplanten Fotos vom Auto sind durch TikZ-Zeichnungen ersetzt: ESP32 mit EN/BOOT/LEDs/USB und eine Prinzipskizze des Kickers. Fotos sind damit nicht mehr nötig.
   - Neuer Ordner `anleitungen/` im Repo mit den drei PDFs für Studierende. Dieselben Dateien liegen im Teams-Ordner `WS26_27/Unterlagen_Studierende/`. Beide Stellen aktualisiert das Skript `WS26_27/Anleitung/anleitungen_verteilen.ps1`, danach hier committen.
   - Word-Aufbauanleitung v4 hat ein neues **Kapitel 7 „Dateien besorgen“**, das dem LaTeX-Kapitel 2 entspricht: Tabelle „Was gibt es wo“, 5 Schritte zum ZIP-Download mit markierten Screenshots, Achtung und Tipp, Ordnertabelle, Verweis auf die Flash-Anleitung. „Steuerung per Handy-App“ ist dadurch Kapitel 8, die Verweise darauf sind angepasst. Eingefügt per Word-COM-Skript.
@@ -114,16 +114,35 @@ Stand: 10.11.2026 · Firmware 1.1 · App-Cache `robocar-v4`
     Nach jedem Aktualisieren des Verzeichnisses den Dateiteil aus diesen Feldcodes entfernen, sonst zeigen die Links im PDF auf eine alte Arbeitskopie.
   - LaTeX: Die Schreibmaschinenschrift trennt nicht mehr (`HyphenChar=None`). Lange Pfade brechen nach `\bs` um.
   - Word-Aufbauanleitung v4, Kap. 8.5 (vorher 7.5): Der Satz „wenden Sie sich an das MakerSpace-Team“ ist ersetzt durch „selbst aufspielen, Firmware per ZIP von GitHub, Details in der Anleitung Kap. 2/4/5“.
+- **Überarbeitung aller Unterlagen für Studierende (15.11.2026):**
+  - Deckblätter (Word, LaTeX Studierende und Betreuer): statt Modulverantwortlicher/Projektwoche jetzt „Erstellt durch Stefan Berger, B.Eng.“.
+  - LaTeX-Anleitung: neues Kapitel 1 „Auf einen Blick“ (genau 2 Seiten, Schrittliste mit Verweisen „Kapitel x, S. y“ und Tabelle „Ich will …“).
+    **Alle Kapitelnummern verschieben sich um 1:** 3 Dateien, 4 App, 5 IDE, 6 Flashen (6.6 Autoname), 7 C++, 8 App ändern, 9 Servo (9.2 Anschließen), 10 Pins, 11 Fehlersuche.
+    Word-Anleitung, READMEs und Betreuer-Doku sind darauf angepasst.
+  - LaTeX-Anleitung inhaltlich geprüft (gegen Firmware und App): Stromversorgung Akku/Powerbank erklärt, Schritt „USB ab, Powerbank an“ nach dem Flashen,
+    Baudrate-Position im Seriellen Monitor, Beispielcode per Strg+A/C/V übernehmen, Python „Add to PATH“, Pull-up erklärt, Servo-Material,
+    Servo nie an VIN, Akku an für den Servotest, neue Fehlersuche-Zeilen, Labels für Verweise, Rechtschreibung und TikZ-Beschriftungen.
+  - Word-Aufbauanleitung: neuer **Abschnitt 7.4 „Firmware auf den ESP32 aufspielen (flashen)“** (8 Schritte, Achtung, Tipp, markierter Screenshot
+    „Werkzeuge“, Abb. 16; Bild aus `WS26_27/Anleitung/Bilder_Word/markieren.py`), 7.5 „Wie geht es weiter?“. Kap. 8: Reiter „Kalibrieren“, Trim dort,
+    `AUTO_NAME`, `?demo` mit Beispieladresse. Materialliste (Akku, Laptop, Multimeter), Rechtschreibung, leere letzte Seite entfernt.
+    Skript und Vergleichsdokument (alle Änderungen als Überarbeitungen) in `WS26_27/Anleitung/_alt_2026-11-15/`.
+    **Falle (pywin32):** `Find.Execute` mit benannten Parametern findet, ersetzt aber nicht. Positionsparameter verwenden.
+    Geschützter Bindestrich im Ersetzungstext als `^~`.
+  - Aushang: neu als HTML-Quelle `WS26_27/Steuerung/Aushang/` (`aushang.html`, `aushang_bauen.ps1`, QR per `segno`), passt jetzt auf **eine** Seite.
+    Ergänzt: „Auto einschalten“ erklärt, Trim unter „Kalibrieren“, „LED blinkt gar nicht → Firmware aufspielen“.
+  - Firmware nur Kommentare: Servo-Verdrahtung in `beispiele/*.cpp` und `aux_user.cpp` auf Step-down (statt VIN/Powerbank), `app/` → `docs/`,
+    Namensregeln (kein ß, Leerzeichen erlaubt), GPIO 5/13 in `config.h`.
 
 ## 8. Offene Punkte
 
 - [ ] **Hardwaretests:** Checkliste in README Abschnitt 8 (Failsafe, 8 Autos gleichzeitig, Android + iPhone/Bluefy, Boot-Test). Alles bisher nur kompiliert und im Demo-Modus geprüft, **nicht** am echten Auto.
-- [ ] **Anleitung nachziehen:** Anleitung v4 und `Anleitung_Kapitel_Steuerung.md` kennen den Reiter „Kalibrieren“ und `AUTO_NAME` noch nicht. Trim steht dort noch unter ⚙ allgemein. Die neue LaTeX-Anleitung für Studierende deckt beides ab. (Der MakerSpace-Satz zum Flashen ist erledigt.)
+- [x] **Anleitung nachziehen (15.11.2026):** Word-Anleitung v4 kennt jetzt Reiter „Kalibrieren“ und `AUTO_NAME`. `Anleitung_Kapitel_Steuerung.md` (Teams-Ordner) ist veraltet und wird nicht mehr gepflegt.
+- [ ] **Offene Kommentare in der Word-Anleitung (Abschnitt 10.4):** 3D-Druck „bis zu 4 Stunden“ – sinnvoll? Alternativ eine Rolle Filament pro Team. Entscheidung der Veranstalter.
 - [x] **Bilder für die LaTeX-Anleitung:** erledigt. Die Fotos sind durch Zeichnungen ersetzt.
 - [x] **Servo-Versorgung (13.11.2026) entschieden:** Step-down-Modul **HW-411 (LM2596, einstellbar, Amazon B0B5GQTS64)**. Eingang über Wago-Klemmen am Akku hinter dem Schalter, parallel zum L298N. Ausgang mit Multimeter auf 5,0 V einstellen, **bevor** der Servo angeschlossen wird. OUT− mit ESP32-GND verbinden, Signal an D4. Nicht mehr über VIN. Die LaTeX-Anleitung (Kap. 8.2, neue Verdrahtungsgrafik, Fehlersuche, Spickzettel), die Betreuer-Doku und die Word-Anleitung 8.5 sind angepasst. Der Aushang bleibt bewusst unverändert (Nutzerentscheidung).
 - [ ] **Servo am echten Auto:** Mit Step-down testen: kein Reset beim Schuss, Servo bekommt 5 V. Die Betreuenden prüfen die 5,0-V-Einstellung, bevor der Servo das erste Mal angeschlossen wird.
 - [ ] **Laptops der Studierenden:** Installation (ESP32-Paket mehrere 100 MB) vorab als Aufgabe ausgeben oder USB-Stick vorbereiten. Fork + Pages einmal mit einem Test-Account durchspielen.
-- [x] **Deckblatt der Anleitung:** aktualisiert am 13.11.2026 (TRAIL, Richert, Luderich, WS 2026/27).
+- [x] **Deckblatt der Anleitung:** aktualisiert am 13.11.2026 (TRAIL, WS 2026/27), am 15.11.2026 auf „Erstellt durch Stefan Berger, B.Eng.“ umgestellt.
 - [ ] **Motoren und Treiber:**
   - Gemessen: bei 100 % ca. **9,6 V** an den Motoren. Der L298N verliert je nach Strom ca. 2–4 V.
   - Motortyp und Nennspannung sind nicht dokumentiert (keine TT-Gelbmotoren), ebenso die Akkuspannung am L298N.

@@ -43,7 +43,8 @@
 // Frei für eigene Erweiterungen (siehe aux_user.cpp):
 //   GPIO 4, 16, 17, 18, 19, 21, 22, 23
 // Nur als Eingang nutzbar (z. B. für Sensoren): GPIO 34, 35, 36, 39
-// Nicht verwenden: 0, 1, 3, 6-11, 12, 15 (werden zum Starten, Flashen und für USB gebraucht)
+// Nicht verwenden: 0, 1, 3, 5, 6-11, 12, 15 (werden zum Starten, Flashen und für USB gebraucht)
+// GPIO 13 geht zur Not, ist aber nicht empfohlen (Sonderfunktion zum Debuggen)
 
 // ---------------------------------------------------------------
 // Motor-PWM
@@ -70,7 +71,7 @@
 
 // ---------------------------------------------------------------
 // Bluetooth (BLE = Bluetooth Low Energy)
-// Diese Werte müssen genau zur App passen (app/ble.js)! Nicht ändern.
+// Diese Werte müssen genau zur App passen (docs/ble.js)! Nicht ändern.
 //
 // Eine UUID ist eine weltweit eindeutige Kennung. Daran erkennt die App
 // "ihren" Dienst auf dem Auto und die drei Datenkanäle (Characteristics):

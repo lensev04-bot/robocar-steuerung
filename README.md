@@ -2,7 +2,8 @@
 
 > **Für Studierende:** Alle Anleitungen liegen im Ordner **[anleitungen/](anleitungen/)**.
 > Die Firmware zum Selbst-Aufspielen bekommen Sie über den grünen Knopf **Code ▸ Download ZIP** (ohne Konto).
-> Wie es weitergeht, steht in `anleitungen/2_Programm_anpassen_und_flashen.pdf`, Kapitel 2, 4 und 5.
+> Wie es weitergeht, steht kurz in `anleitungen/1_Aufbauanleitung_Auto.pdf`, Abschnitt 7.4, und ausführlich in
+> `anleitungen/2_Programm_anpassen_und_flashen.pdf`, Kapitel 3, 5 und 6.
 
 **Entwicklungsnotizen** (Entscheidungen, Verlauf, offene Punkte): [ENTWICKLUNG.md](ENTWICKLUNG.md)
 
