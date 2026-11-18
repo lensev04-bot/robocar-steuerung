@@ -17,9 +17,9 @@
 'use strict';
 
 const AUX_KANAELE = [
-  { name: 'KICK',  art: 'taster'   },   // AUX 1
-  { name: 'LICHT', art: 'schalter' },   // AUX 2
-  { name: 'ARM',   art: 'schieber' },   // AUX 3
+  { name: 'KICK',  art: 'schalter'   },   // AUX 1
+  { name: 'LICHT', art: null },   // AUX 2
+  { name: 'ARM',   art: null },   // AUX 3
   { name: 'AUX 4', art: null       },   // AUX 4
 ];
 
